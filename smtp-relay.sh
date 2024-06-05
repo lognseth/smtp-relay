@@ -24,6 +24,7 @@ postconf "myhostname = ${SMTP_RELAY_MYHOSTNAME}" || exit 1
 postconf "mynetworks = ${SMTP_RELAY_MYNETWORKS}" || exit 1
 postconf "smtp_tls_wrappermode = ${SMTP_RELAY_WRAPPERMODE}" || exit 1
 postconf "smtp_tls_security_level = ${SMTP_TLS_SECURITY_LEVEL}" || exit 1
+postconf "smtp_use_tls = ${SMTP_USE_TLS}" || exit 1
 
 # http://www.postfix.org/COMPATIBILITY_README.html#smtputf8_enable
 postconf 'smtputf8_enable = no' || exit 1

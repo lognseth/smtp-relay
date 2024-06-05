@@ -20,6 +20,6 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           push: false
-          tags: djjudas21/smtp-relay:testing
+          tags: lognseth/smtp-relay:testing
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}

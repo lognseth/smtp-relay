@@ -1,5 +1,5 @@
 FROM alpine:3.19
-LABEL maintainer "Jonathan Gazeley"
+LABEL maintainer "Mikael Lognseth"
 
 RUN apk add --no-cache postfix \
     && /usr/bin/newaliases
