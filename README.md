@@ -32,6 +32,7 @@ docker run --rm -it -p 2525:25 \
 	-e SMTP_RELAY_MYNETWORKS=127.0.0.0/8,10.0.0.0/8 \
 	-e SMTP_RELAY_WRAPPERMODE=no \
 	-e SMTP_TLS_SECURITY_LEVEL="" \
+	-e SMTP_USE_TLS="yes" \
 	lognseth/smtp-relay
 
 ```
