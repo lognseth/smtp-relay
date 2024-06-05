@@ -22,37 +22,36 @@ This image supports the following enironment variables. All are **required**.
 | `SMTP_USE_TLS`             | whether or not to use TLS, can be one of `yes`, `no`                | `yes`                     |
 
 # Quickstart
+
 Run on docker
+
 ```
 docker run --rm -it -p 2525:25 \
-	-e SMTP_RELAY_HOST="[smtp.sendgrid.net]:587" \
-	-e SMTP_RELAY_MYHOSTNAME=smtp-relay.yourhost.com \
-	-e SMTP_RELAY_USERNAME=username \
-	-e SMTP_RELAY_PASSWORD=password \
-	-e SMTP_RELAY_MYNETWORKS=127.0.0.0/8,10.0.0.0/8 \
+	-e SMTP_RELAY_HOST="[smtp.gmail.com]:587" \
+	-e SMTP_RELAY_MYHOSTNAME=smtp.gmail.local \
+	-e SMTP_RELAY_USERNAME=lognset@gmail.com \
+	-e SMTP_RELAY_PASSWORD="your_password" \
+	-e SMTP_RELAY_MYNETWORKS=127.0.0.0/8,10.0.0.0/8,192.0.0.0/8 \
 	-e SMTP_RELAY_WRAPPERMODE=no \
 	-e SMTP_TLS_SECURITY_LEVEL="" \
 	-e SMTP_USE_TLS="yes" \
 	lognseth/smtp-relay
+```
+
+## Send a test message
+
+First run `telnet localhost 2525`
+
+You can then run the following command, just make sure to set the email address correctly:
 
 ```
-Send a test message
-<pre>
-<b>telnet localhost 2525</b>
-220 smtp-relay.yourhost.com ESMTP Postfix
-<b>helo localhost</b>
-250 smtp-relay.yourhost.com
-<b>mail from: noreply@yourhost.com</b>
-250 2.1.0 Ok
-<b>rcpt to: chris@applariat.com</b>
-250 2.1.5 Ok
-<b>data</b>
-354 End data with <CR><LF>.<CR><LF>
-<b>Subject: What?</b>
-<b>My hovercraft is full of eels.</b>
-<b>.</b>
-250 2.0.0 Ok: queued as 982FF53C
-<b>quit</b>
-221 2.0.0 Bye
-Connection closed by foreign host
-</pre>
+helo localhost
+mail from: your_email@gmail.com
+rcpt to: your_recipient@domain.com
+data
+Subject: Moin
+Is what they say in the North instead of Servus, in Norway the equivelant would be Morn
+.
+quit
+
+```
