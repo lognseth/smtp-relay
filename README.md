@@ -19,7 +19,7 @@ This image supports the following enironment variables. All are **required**.
 | `SMTP_RELAY_MYNETWORKS`    | Comma-separated list of local networks that can use this SMTP relay | `127.0.0.0/8,10.0.0.0/8`  |
 | `SMTP_RELAY_WRAPPERMODE`   | Request postfix connects using SUBMISSIONS/SMTPS protocol instead of STARTTLS | `no`            |
 | `SMTP_TLS_SECURITY_LEVEL`  | default SMTP TLS security level for the Postfix SMTP client         | `""`                      |
-| `SMTP_USE_TLS`             | whether or not to use TLS, can be one of `yes`, `no`                | `yes`                     |
+| `SMTP_USE_TLS`             | whether or not to use TLS, can be one of `yes`, `no` – when using Gmail this value must be set to `yes`                | `yes`                     |
 
 # Quickstart
 
