@@ -29,7 +29,7 @@ Run on docker
 docker run --rm -it -p 2525:25 \
 	-e SMTP_RELAY_HOST="[smtp.gmail.com]:587" \
 	-e SMTP_RELAY_MYHOSTNAME=smtp.gmail.local \
-	-e SMTP_RELAY_USERNAME=lognset@gmail.com \
+	-e SMTP_RELAY_USERNAME=your_email@gmail.com \
 	-e SMTP_RELAY_PASSWORD="your_password" \
 	-e SMTP_RELAY_MYNETWORKS=127.0.0.0/8,10.0.0.0/8,192.0.0.0/8 \
 	-e SMTP_RELAY_WRAPPERMODE=no \
